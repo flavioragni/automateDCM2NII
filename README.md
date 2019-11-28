@@ -6,7 +6,7 @@ The software is available on https://github.com/rordenlab/dcm2niix under a BSD L
 
 # Getting started
 
-#Prerequisites
+# Prerequisites
 
 
 
