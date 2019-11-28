@@ -48,7 +48,7 @@ currentUser = userInput()
 currentUser.mainloop()
 
 #Set dcm2nii path
-conv_path = "C:\\Users\\flavio.ragni\\Documents\\MRIcroGL12\\dcm2niix.exe"
+conv_path = ".\\dcm2niix.exe"
 
 #List subfolder inside main folder
 all_dir = os.listdir(currentUser.path)
@@ -144,19 +144,19 @@ print("Conversion completed!")
 
 #STEP2: move nifti files to different folder
 #Check if SUB folder exists otherwise make it
-if os.path.exists(f"C:\\Users\\flavio.ragni\\Documents\\Resting_state_project\\SUB{currentUser.sub}"):
+if os.path.exists(f".\\SUB{currentUser.sub}"):
     pass
 else:
-    os.mkdir(f"C:\\Users\\flavio.ragni\\Documents\\Resting_state_project\\SUB{currentUser.sub}")
+    os.mkdir(f".\\SUB{currentUser.sub}")
 #Search for all nii files in DICOM path
 for root, dirs, files in os.walk(currentUser.path):
     if currentUser.comp == 'y':
         for filename in [f for f in files if f.endswith(('.nii.gz', '.json'))]:
             print(os.path.join(root, filename))
-            shutil.move(os.path.join(root, filename), f"C:\\Users\\flavio.ragni\\Documents\\Resting_state_project\\SUB{currentUser.sub}")
+            shutil.move(os.path.join(root, filename), f".\\SUB{currentUser.sub}")
     else:
         for filename in [f for f in filename if f.endswith(('.nii', '.json'))]:
             print(os.path.join(root, filename))
-            shutil.move(os.path.join(root, filename), f"C:\\Users\\flavio.ragni\\Documents\\Resting_state_project\\SUB{currentUser.sub}")
+            shutil.move(os.path.join(root, filename), f".\\SUB{currentUser.sub}")
 
 print("Job completed: all nii moved to main folder!")
