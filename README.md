@@ -10,5 +10,4 @@ automateDCM2NII features a tkinter interface where users can indicate the path t
 
 The script automatically converts DICOM files using dcm2niix, and renames them according to the subject number.
 
-
-
+fr 2020-01-22
